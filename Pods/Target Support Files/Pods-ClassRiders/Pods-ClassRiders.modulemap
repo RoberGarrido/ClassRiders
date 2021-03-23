@@ -1,0 +1,6 @@
+framework module Pods_ClassRiders {
+  umbrella header "Pods-ClassRiders-umbrella.h"
+
+  export *
+  module * { export * }
+}
