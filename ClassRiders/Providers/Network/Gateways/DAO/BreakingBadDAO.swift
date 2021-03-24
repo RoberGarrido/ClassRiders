@@ -14,7 +14,7 @@ struct BreakingBadDAO: ImmutableMappable {
 
     let id: Int
     let name: String
-    let img: String
+    let img: [String: Any]
     let status: String
     let nickname: String
     //let types: [[String: Any]]

@@ -19,6 +19,7 @@
 		162A1DDE260BBA9E00D7E4D5 /* BreakingBadDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1DDD260BBA9E00D7E4D5 /* BreakingBadDAO.swift */; };
 		162A1DE9260BBC9C00D7E4D5 /* BreakingBadNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1DE8260BBC9C00D7E4D5 /* BreakingBadNetworkProvider.swift */; };
 		162A1DED260BBFCB00D7E4D5 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1DEC260BBFCB00D7E4D5 /* Enviroment.swift */; };
+		162A1DF8260BC1CB00D7E4D5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1DF7260BC1CB00D7E4D5 /* Character.swift */; };
 		16DADFE5260A85D100C075E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE4260A85D100C075E0 /* AppDelegate.swift */; };
 		16DADFE7260A85D100C075E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE6260A85D100C075E0 /* SceneDelegate.swift */; };
 		16DADFE9260A85D100C075E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE8260A85D100C075E0 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		162A1DDD260BBA9E00D7E4D5 /* BreakingBadDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDAO.swift; sourceTree = "<group>"; };
 		162A1DE8260BBC9C00D7E4D5 /* BreakingBadNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadNetworkProvider.swift; sourceTree = "<group>"; };
 		162A1DEC260BBFCB00D7E4D5 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		162A1DF7260BC1CB00D7E4D5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		16DADFE1260A85D100C075E0 /* ClassRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DADFE4260A85D100C075E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16DADFE6260A85D100C075E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		162A1DF6260BC1A100D7E4D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				162A1DF7260BC1CB00D7E4D5 /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1638C302260A9BE30037BAA0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		16DADFE3260A85D100C075E0 /* ClassRiders */ = {
 			isa = PBXGroup;
 			children = (
+				162A1DF6260BC1A100D7E4D5 /* Models */,
 				162A1DEB260BBF8800D7E4D5 /* Configuration */,
 				162A1D2D260B54EA00D7E4D5 /* Extensions */,
 				1638C302260A9BE30037BAA0 /* Modules */,
@@ -318,6 +329,7 @@
 				162A1DD8260BB9E500D7E4D5 /* NetworkConstants.swift in Sources */,
 				162A1D3F260B565700D7E4D5 /* UIViewControllerExtension.swift in Sources */,
 				162A1DDB260BBA1C00D7E4D5 /* BaseNetworkProvider.swift in Sources */,
+				162A1DF8260BC1CB00D7E4D5 /* Character.swift in Sources */,
 				162A1DE9260BBC9C00D7E4D5 /* BreakingBadNetworkProvider.swift in Sources */,
 				162A1D28260B4FB000D7E4D5 /* BaseViewController.swift in Sources */,
 				162A1D24260B4CE100D7E4D5 /* BaseEntity.swift in Sources */,
