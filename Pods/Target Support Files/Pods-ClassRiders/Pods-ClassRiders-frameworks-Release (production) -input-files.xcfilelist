@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-ClassRiders/Pods-ClassRiders-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework

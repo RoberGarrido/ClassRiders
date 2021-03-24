@@ -10,4 +10,5 @@ target 'ClassRiders' do
   pod 'PromiseKit'
   pod 'SwiftLint'
   pod 'LanguageManager-iOS'
+  pod 'ObjectMapper'
 end
