@@ -1,3 +1,36 @@
-PODFILE CHECKSUM: f3efc6d355e5e615b7f4bf74a6753d7f1c732086
+PODS:
+  - Alamofire (5.4.1)
+  - LanguageManager-iOS (1.2.3)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+  - SwiftLint (0.43.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - LanguageManager-iOS
+  - PromiseKit
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - LanguageManager-iOS
+    - PromiseKit
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  LanguageManager-iOS: 020a6849c97949683926773fd5b82baceaa142db
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+
+PODFILE CHECKSUM: e769cfa8de26ad05eed6450fd7942846b755c525
 
 COCOAPODS: 1.10.1

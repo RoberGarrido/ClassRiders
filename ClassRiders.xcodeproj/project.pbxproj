@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162A1D1F260B4CE100D7E4D5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D17260B4CE100D7E4D5 /* BasePresenter.swift */; };
+		162A1D21260B4CE100D7E4D5 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D19260B4CE100D7E4D5 /* BaseInteractor.swift */; };
+		162A1D24260B4CE100D7E4D5 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D1C260B4CE100D7E4D5 /* BaseEntity.swift */; };
+		162A1D25260B4CE100D7E4D5 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D1D260B4CE100D7E4D5 /* BaseWireframe.swift */; };
+		162A1D28260B4FB000D7E4D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D27260B4FB000D7E4D5 /* BaseViewController.swift */; };
+		162A1D2F260B551200D7E4D5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D2E260B551200D7E4D5 /* StringExtension.swift */; };
+		162A1D3F260B565700D7E4D5 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A1D3E260B565700D7E4D5 /* UIViewControllerExtension.swift */; };
 		16DADFE5260A85D100C075E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE4260A85D100C075E0 /* AppDelegate.swift */; };
 		16DADFE7260A85D100C075E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE6260A85D100C075E0 /* SceneDelegate.swift */; };
 		16DADFE9260A85D100C075E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE8260A85D100C075E0 /* ViewController.swift */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		162A1D17260B4CE100D7E4D5 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		162A1D19260B4CE100D7E4D5 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		162A1D1C260B4CE100D7E4D5 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		162A1D1D260B4CE100D7E4D5 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		162A1D27260B4FB000D7E4D5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		162A1D2E260B551200D7E4D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		162A1D3E260B565700D7E4D5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		16DADFE1260A85D100C075E0 /* ClassRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DADFE4260A85D100C075E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16DADFE6260A85D100C075E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +59,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162A1D2D260B54EA00D7E4D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				162A1D2E260B551200D7E4D5 /* StringExtension.swift */,
+				162A1D3E260B565700D7E4D5 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1638C302260A9BE30037BAA0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1638C327260A9D1D0037BAA0 /* Base */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1638C327260A9D1D0037BAA0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				162A1D1C260B4CE100D7E4D5 /* BaseEntity.swift */,
+				162A1D19260B4CE100D7E4D5 /* BaseInteractor.swift */,
+				162A1D17260B4CE100D7E4D5 /* BasePresenter.swift */,
+				162A1D27260B4FB000D7E4D5 /* BaseViewController.swift */,
+				162A1D1D260B4CE100D7E4D5 /* BaseWireframe.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		16DADFD8260A85D100C075E0 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +109,8 @@
 		16DADFE3260A85D100C075E0 /* ClassRiders */ = {
 			isa = PBXGroup;
 			children = (
+				162A1D2D260B54EA00D7E4D5 /* Extensions */,
+				1638C302260A9BE30037BAA0 /* Modules */,
 				16DADFE4260A85D100C075E0 /* AppDelegate.swift */,
 				16DADFE6260A85D100C075E0 /* SceneDelegate.swift */,
 				16DADFE8260A85D100C075E0 /* ViewController.swift */,
@@ -94,7 +139,6 @@
 				220AB13B56084E0E44A41C6B /* Pods-ClassRiders.release (development).xcconfig */,
 				26E7D22E69BA466F5FE99345 /* Pods-ClassRiders.release (production) .xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +153,7 @@
 				16DADFDD260A85D100C075E0 /* Sources */,
 				16DADFDE260A85D100C075E0 /* Frameworks */,
 				16DADFDF260A85D100C075E0 /* Resources */,
+				C94AB42285FB70818B045AFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +232,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C94AB42285FB70818B045AFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClassRiders/Pods-ClassRiders-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClassRiders/Pods-ClassRiders-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClassRiders/Pods-ClassRiders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -195,8 +257,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DADFE9260A85D100C075E0 /* ViewController.swift in Sources */,
+				162A1D25260B4CE100D7E4D5 /* BaseWireframe.swift in Sources */,
+				162A1D3F260B565700D7E4D5 /* UIViewControllerExtension.swift in Sources */,
+				162A1D28260B4FB000D7E4D5 /* BaseViewController.swift in Sources */,
+				162A1D24260B4CE100D7E4D5 /* BaseEntity.swift in Sources */,
+				162A1D1F260B4CE100D7E4D5 /* BasePresenter.swift in Sources */,
+				162A1D2F260B551200D7E4D5 /* StringExtension.swift in Sources */,
 				16DADFE5260A85D100C075E0 /* AppDelegate.swift in Sources */,
 				16DADFE7260A85D100C075E0 /* SceneDelegate.swift in Sources */,
+				162A1D21260B4CE100D7E4D5 /* BaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

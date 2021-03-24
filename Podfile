@@ -6,5 +6,8 @@ target 'ClassRiders' do
   use_frameworks!
 
   # Pods for ClassRiders
-
+  pod 'Alamofire'
+  pod 'PromiseKit'
+  pod 'SwiftLint'
+  pod 'LanguageManager-iOS'
 end
