@@ -11,16 +11,9 @@ import Foundation
 import PromiseKit
 
 class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
-    weak var output: CharacterListInteractorOutputContract?
-
-    var characterProvider: BreakingBadProviderContract
+  
     
-    init (characterProvider: BreakingBadProviderContract) {
-        self.characterProvider = characterProvider
-    }
-    
-    // MARK: - Public methods
-    func getCharacterList() -> Promise<[Character]> {
+    func getCharactersList() -> Promise<[Character]> {
         return Promise<[Character]> { promise in
             firstly {
                 self.characterProvider.getAllCharacters()
@@ -31,4 +24,16 @@ class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
             }
         }
     }
+    weak var output: CharacterListInteractorOutputContract?
+
+    var characterProvider: BreakingBadProviderContract
+    
+    init (characterProvider: BreakingBadProviderContract) {
+        self.characterProvider = characterProvider
+    }
+    
+    // MARK: - Public methods
+ 
 }
+
+

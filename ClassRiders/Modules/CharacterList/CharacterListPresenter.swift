@@ -11,11 +11,12 @@ import Foundation
 import PromiseKit
 
 class CharacterListPresenter: BasePresenter, CharacterListPresenterContract {
+    
 
     weak var view: CharacterListViewContract!
     var interactor: CharacterListInteractorContract!
-    var entity: CharacterListEntityContract?
-    var wireframe: CharacterListWireframeContract?
+    var entity: CharacterListEntityContract!
+    var wireframe: CharacterListWireframeContract!
     
     var charactersList: [Character] = []
 
@@ -34,8 +35,16 @@ class CharacterListPresenter: BasePresenter, CharacterListPresenterContract {
             self.view.feedbackError(error: error)
         }
     }
-}
+    func selectCharacterCell(index: Int) {
+        if charactersList.count > index {
+            let character = charactersList[index]
 
+            wireframe?.showDetailCharacterView(character: character)
+        } else {
+            debugPrint("Object at Index \(index) not found")
+        }
+    }
+}
 
 // MARK: - CharacterListInteractorOutputContract
 extension CharacterListPresenter: CharacterListInteractorOutputContract {
