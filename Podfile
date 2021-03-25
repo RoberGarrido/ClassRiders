@@ -11,4 +11,5 @@ target 'ClassRiders' do
   pod 'SwiftLint'
   pod 'LanguageManager-iOS'
   pod 'ObjectMapper'
+  pod 'SDWebImage'
 end
