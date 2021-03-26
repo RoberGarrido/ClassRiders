@@ -16,3 +16,11 @@ let kLoginToken: String = "WRR=W-Lqu82Tq8B$Kg7t@W-unzhC-&@bV-u^"
 
 let kTimeoutIntervalForRequest = Double(10)
 let kTimeoutIntervalForResource = Double(10)
+
+class NetworkConstants {
+    
+    static let baseUrl: String = "https://www.breakingbadapi.com/api/"
+    static let paramCharacters: String = "characters/"
+    
+}
+

@@ -9,7 +9,6 @@ target 'ClassRiders' do
   pod 'Alamofire'
   pod 'PromiseKit'
   pod 'SwiftLint'
-  pod 'LanguageManager-iOS'
   pod 'ObjectMapper'
   pod 'SDWebImage'
 end

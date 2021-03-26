@@ -31,8 +31,6 @@ class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
     init (characterProvider: BreakingBadProviderContract) {
         self.characterProvider = characterProvider
     }
-    
-    // MARK: - Public methods
  
 }
 

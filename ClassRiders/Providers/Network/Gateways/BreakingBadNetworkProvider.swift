@@ -63,8 +63,8 @@ class BreakingBadNetworkProvider: BaseNetworkProvider, BreakingBadProviderContra
         switch service {
         case .kInitialPage:
             return URL(string: "https://www.breakingbadapi.com/api/characters")!
-        case .kDetailCharacter(let characterId):
-            return URL(string: "https://www.breakingbadapi.com/api/\(characterId)/")!
+        case .kDetailCharacter:
+            return URL(string: "https://www.breakingbadapi.com/api/character/random")!
         }
     }
 

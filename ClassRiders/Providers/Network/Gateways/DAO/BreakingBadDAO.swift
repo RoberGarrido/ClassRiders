@@ -12,28 +12,31 @@ struct BreakingBadDAO: ImmutableMappable {
 
     static let defaultFront = "front_default"
 
-    let id: Int
+    let char_id: Int
     let name: String
-    let img: [String: Any]
+    let birthday: String
+    let img: String
     let status: String
     let nickname: String
-    //let types: [[String: Any]]
+    let portrayed: String
 
     init(map: Map) throws {
-        id = try map.value("id")
+        char_id = try map.value("id")
         name = try map.value("name")
+        birthday = try map.value("birthday")
         img = try map.value("portrait")
         status = try map.value("status")
         nickname = try map.value("nickname")
-        //types = try map.value("types")
+        portrayed = try map.value("portrayed")
     }
 
     func mapping(map: Map) {
-        id   >>> map["id"]
+        char_id   >>> map["id"]
         name >>> map["name"]
+        birthday >>> map["birthday"]
         img >>> map["portrait"]
         status >>> map["status"]
         nickname >>> map["nickname"]
-        //types >>> map["types"]
+        portrayed >>> map["portrayed"]
     }
 }

@@ -8,32 +8,24 @@
 import Foundation
 
 struct Character {
+    var char_id: Int
     var imgPortrait: String
     var name: String
     //var fav: Bool = false
+    var birthday: String
     var status: String
     var nickname: String
-    //var types: [String]
+    var portrayed: String
+   
 
     init(breakingBadDAO: BreakingBadDAO) {
+        char_id = breakingBadDAO.char_id
         name = breakingBadDAO.name
-        if !breakingBadDAO.img.isEmpty,
-           let defaultFront = breakingBadDAO.img[BreakingBadDAO.defaultFront] as? String {
-            imgPortrait = defaultFront
-        } else {
-            imgPortrait = ""
-        }
+        imgPortrait = breakingBadDAO.img
+        birthday = breakingBadDAO.birthday
         status = breakingBadDAO.status
         nickname = breakingBadDAO.nickname
-        //let typesString = pokemonDAO.types.map { element -> String? in
-          //  if let type = element["type"] as? [String: String],
-            //   let nameType = type["name"] {
-              //  return nameType
-            //} else {
-              //  return nil
-            //}
-        //}
-
-        //types = typesString.compactMap { $0 }
+        portrayed = breakingBadDAO.portrayed
+        
     }
 }
