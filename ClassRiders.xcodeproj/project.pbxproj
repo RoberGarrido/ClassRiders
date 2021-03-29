@@ -310,8 +310,8 @@
 		1638C302260A9BE30037BAA0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1691EA032611EC4600342E15 /* MenuTabBar */,
 				1638C327260A9D1D0037BAA0 /* Base */,
+				1691EA032611EC4600342E15 /* MenuTabBar */,
 				1691E9E42611E8CA00342E15 /* FormView */,
 				162A1E6E260C9D3700D7E4D5 /* CharacterDetail */,
 				162A1E12260BD74600D7E4D5 /* CharacterList */,
@@ -334,13 +334,13 @@
 		1691E9E42611E8CA00342E15 /* FormView */ = {
 			isa = PBXGroup;
 			children = (
+				1691EA332612729C00342E15 /* UI */,
 				1691E9E72611E8E800342E15 /* FormBuilder.swift */,
 				1691E9E52611E8E800342E15 /* FormContract.swift */,
 				1691E9EB2611E8E800342E15 /* FormEntity.swift */,
 				1691E9E82611E8E800342E15 /* FormInteractor.swift */,
 				1691E9E62611E8E800342E15 /* FormPresenter.swift */,
 				1691E9E92611E8E800342E15 /* FormView.swift */,
-				1691E9EA2611E8E800342E15 /* FormView.xib */,
 				1691E9EC2611E8E800342E15 /* FormWireframe.swift */,
 			);
 			path = FormView;
@@ -349,16 +349,32 @@
 		1691EA032611EC4600342E15 /* MenuTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				1691EA322612727200342E15 /* UI */,
 				1691EA062611EC8F00342E15 /* MenuTabBarBuilder.swift */,
 				1691EA042611EC8F00342E15 /* MenuTabBarContract.swift */,
 				1691EA0A2611EC8F00342E15 /* MenuTabBarEntity.swift */,
 				1691EA072611EC8F00342E15 /* MenuTabBarInteractor.swift */,
 				1691EA052611EC8F00342E15 /* MenuTabBarPresenter.swift */,
 				1691EA082611EC8F00342E15 /* MenuTabBarView.swift */,
-				1691EA092611EC8F00342E15 /* MenuTabBarView.xib */,
 				1691EA0B2611EC8F00342E15 /* MenuTabBarWireframe.swift */,
 			);
 			path = MenuTabBar;
+			sourceTree = "<group>";
+		};
+		1691EA322612727200342E15 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1691EA092611EC8F00342E15 /* MenuTabBarView.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1691EA332612729C00342E15 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1691E9EA2611E8E800342E15 /* FormView.xib */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		16DADFD8260A85D100C075E0 = {
