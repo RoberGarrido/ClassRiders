@@ -52,22 +52,24 @@ class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
         tableView.reloadData()
     }
     
-    private func genericData(character: CharacterElement) -> [String: String] {
-        var characterData: [String: String] = [:]
+    private func genericData(character: CharacterElement) -> CharactersData {
+        var characterData: CharactersData = [:]
 
-        characterData["name"] = character.name
-        characterData["birthday"] = character.birthday.map { $0.rawValue }
-        characterData["status"] = character.status?.rawValue
-        characterData["nickname"] = character.nickname
-        characterData["portrayed"] = character.portrayed
-        characterData["category"] = character.category.map { $0.rawValue }
+        characterData[0] = ("name", character.name)
+        characterData[1] = ("birthday", character.birthday.map { $0.rawValue })
+        characterData[2] = ("status", character.status?.rawValue)
+        characterData[3] = ("nickname", character.nickname)
+        characterData[4] = ("portrayed", character.portrayed)
+        characterData[5] = ("category", character.category.map { $0.rawValue })
 
         return characterData
     }
 }
 
+typealias CharactersData = [Int: (String, String?)]
+
 class CharacterDetailDataSource: NSObject, UITableViewDataSource {
-    var characterData: [String: String]!
+    var characterData: CharactersData!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characterData.count
@@ -77,9 +79,11 @@ class CharacterDetailDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterDetailTableViewCell.cellId,
                                                  // swiftlint:disable:next force_cast
                                                  for: indexPath) as! CharacterDetailTableViewCell
-
-        cell.setData(title: Array(characterData.keys)[indexPath.item],
-                     value: Array(characterData.values)[indexPath.item])
+        if let data = characterData [indexPath.row] {
+            cell.setData(title: data.0,
+                         value: data.1 ?? "")
+        }
+        
 
         return cell
     }
