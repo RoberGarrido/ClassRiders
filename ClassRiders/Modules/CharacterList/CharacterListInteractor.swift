@@ -11,27 +11,26 @@ import Foundation
 import PromiseKit
 
 class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
-  
-    
-    func getCharactersList() -> Promise<[Character]> {
-        return Promise<[Character]> { promise in
-            firstly {
-                self.characterProvider.getAllCharacters()
-            }.done { charactersDAOList in
-                let charactersList = charactersDAOList.map { Character(breakingBadDAO: $0) }
-                
-                promise.fulfill(charactersList)
-            }
-        }
-    }
     weak var output: CharacterListInteractorOutputContract?
-
+    
     var characterProvider: BreakingBadProviderContract
     
     init (characterProvider: BreakingBadProviderContract) {
         self.characterProvider = characterProvider
     }
- 
+    
+    func getCharactersList() -> Promise<[CharacterElement]> {
+        return Promise<[CharacterElement]> { promise in
+            firstly {
+                self.characterProvider.getCharacters()
+            }.done { charactersList in
+                
+                promise.fulfill(charactersList)
+            }.catch { error in
+                promise.reject(error)
+            }
+        }
+    }
 }
 
 

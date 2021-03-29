@@ -19,7 +19,7 @@ protocol CharacterListEntityContract: BaseEntity {
 protocol CharacterListViewContract: BaseViewController {
     var presenter: CharacterListPresenterContract! { get set }
     
-    func updateCharacterData(characters: [Character])
+    func updateCharacterData(characters: [CharacterElement])
     func feedbackError (error: Error)
     
 }
@@ -27,20 +27,20 @@ protocol CharacterListViewContract: BaseViewController {
 protocol CharacterListPresenterContract: BasePresenter {
     var view: CharacterListViewContract! { get set }
     var interactor: CharacterListInteractorContract! { get set }
-    var entity: CharacterListEntityContract! { get set }
-    var wireframe: CharacterListWireframeContract! { get set }
+    var entity: CharacterListEntityContract? { get set }
+    var wireframe: CharacterListWireframeContract? { get set }
     
     func viewWillAppear()
     func viewDidLoad()
     
-    func selectCharacterCell(index: Int) -> ()
+    func selectCharacterCell(index: Int)
     
 }
 
 protocol CharacterListInteractorContract: BaseInteractor {
     var output: CharacterListInteractorOutputContract? {get set}
     
-    func getCharactersList()-> Promise<[Character]>
+    func getCharactersList()-> Promise<[CharacterElement]>
 }
 
 protocol CharacterListInteractorOutputContract: class {
@@ -53,7 +53,7 @@ protocol CharacterListWireframeContract: BaseWireframe {
     
     func showBasicLoading(text: String)
     func hideBasicLoading(completion: @escaping (() -> Void))
-    func showDetailCharacterView(character: Character) -> ()
+    func showDetailCharacterView(character: CharacterElement)
 }
 
 protocol CharacterListWireframeOutputContract: class {

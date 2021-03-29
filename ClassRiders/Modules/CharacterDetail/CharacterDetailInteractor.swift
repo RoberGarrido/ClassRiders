@@ -13,14 +13,14 @@ class CharacterDetailInteractor: BaseInteractor, CharacterDetailInteractorContra
     weak var output: CharacterDetailInteractorOutputContract!
 
     var networkProvider: BreakingBadNetworkProvider
-    var character: Character
+    var character: CharacterElement
     
-    init (provider: BreakingBadNetworkProvider, character: Character) {
+    init (provider: BreakingBadNetworkProvider, character: CharacterElement) {
         self.networkProvider = provider
         self.character = character
     }
     
-    func getCharacterData() -> Character {
+    func getCharacterData() -> CharacterElement {
         return character
     }
 }

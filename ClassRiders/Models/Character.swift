@@ -7,25 +7,35 @@
 
 import Foundation
 
-struct Character {
-    var char_id: Int
-    var imgPortrait: String
-    var name: String
-    //var fav: Bool = false
-    var birthday: String
-    var status: String
-    var nickname: String
-    var portrayed: String
-   
-
-    init(breakingBadDAO: BreakingBadDAO) {
-        char_id = breakingBadDAO.char_id
-        name = breakingBadDAO.name
-        imgPortrait = breakingBadDAO.img
-        birthday = breakingBadDAO.birthday
-        status = breakingBadDAO.status
-        nickname = breakingBadDAO.nickname
-        portrayed = breakingBadDAO.portrayed
-        
-    }
+struct CharacterElement: Codable {
+    var charID: Int?
+    var name: String?
+    var birthday: Birthday?
+    var img: String?
+    var status: Status?
+    var nickname: String?
+    var portrayed: String?
+ 
 }
+
+enum Birthday: String, Codable {
+    case the07081993 = "07-08-1993"
+    case the08111970 = "08-11-1970"
+    case the09071958 = "09-07-1958"
+    case the09241984 = "09-24-1984"
+    case unknown = "Unknown"
+}
+
+
+enum Status: String, Codable {
+    case alive = "Alive"
+    case deceased = "Deceased"
+    case presumedDead = "Presumed dead"
+    case unknown = "Unknown"
+}
+
+typealias itemCharacter = [CharacterElement]
+
+
+
+

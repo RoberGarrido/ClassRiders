@@ -19,7 +19,7 @@ protocol CharacterDetailEntityContract: BaseEntity {
 protocol CharacterDetailViewContract: BaseViewController {
     var presenter: CharacterDetailPresenterContract! { get set }
     
-    func reloadViewWithData(character: Character)
+    func reloadViewWithData(character: CharacterElement)
     
 }
 
@@ -37,7 +37,7 @@ protocol CharacterDetailPresenterContract: BasePresenter {
 protocol CharacterDetailInteractorContract: BaseInteractor {
     var output: CharacterDetailInteractorOutputContract! {get set}
     
-    func getCharacterData() -> Character
+    func getCharacterData() -> CharacterElement
 }
 
 protocol CharacterDetailInteractorOutputContract: class {

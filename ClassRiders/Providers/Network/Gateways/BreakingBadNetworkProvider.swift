@@ -9,7 +9,7 @@ import Foundation
 import PromiseKit
 
 protocol BreakingBadProviderContract {
-    func getAllCharacters() -> Promise<[BreakingBadDAO]>
+    func getCharacters() -> Promise<[CharacterElement]>
 }
 
 class BreakingBadNetworkProvider: BaseNetworkProvider, BreakingBadProviderContract {
@@ -22,41 +22,12 @@ class BreakingBadNetworkProvider: BaseNetworkProvider, BreakingBadProviderContra
         case initialPageLoadError, detailPageLoadError
     }
 
-    let kAPIResultsKey = "results"
-    let kAPIUrlKey = "url"
+    let kAPIResultsKey = "https://www.breakingbadapi.com/api/characters"
+    let kAPIUrlKey = "https://www.breakingbadapi.com/api/characters"
 
-    func getAllCharacters() -> Promise<[BreakingBadDAO]> {
-        var detailPagePromise: [Promise<BreakingBadDAO>] = []
-
-        return Promise<[BreakingBadDAO]> { promise in
-
-            self.getInitialPage().done { initialPage in
-                for element in initialPage {
-                    if let detailUrl = element[self.kAPIUrlKey] {
-                        detailPagePromise.append(self.getCharacterDetail(fullURLString: detailUrl))
-                    }
-                }
-
-                when(resolved: detailPagePromise).done { results in
-                    var fullfilledPromiseValues: [BreakingBadDAO] = []
-                    for case .fulfilled(let value) in results {
-                        // These promises succeeded, and the values will be what is return from
-                        // the last promises in chain1 and chain2
-                        print("Promise value is: \(value)")
-                        fullfilledPromiseValues.append(value)
-                    }
-
-                    debugPrint(results)
-
-                    promise.fulfill(fullfilledPromiseValues)
-                }.catch { error in
-                    debugPrint(error)
-                    //promise.reject(error)
-                }
-            }.catch { error in
-                promise.reject(error)
-            }
-        }
+    func getCharacters() -> Promise<[CharacterElement]> {
+        return self.getInitialPage()
+        
     }
 
     private func getUrl(service: BreakingBadURLEntries) -> URL {
@@ -68,34 +39,28 @@ class BreakingBadNetworkProvider: BaseNetworkProvider, BreakingBadProviderContra
         }
     }
 
-    private func getInitialPage() -> Promise<[[String: String]]> {
-        return Promise<[[String: String]]> { promise in
-            sessionManager.request(getUrl(service: .kInitialPage)).responseJSON { response in
-                guard let initialData = try? response.result.get() as? [String: Any],
-                      let initialDataResults = initialData[self.kAPIResultsKey] as? [[String: String]] else {
-                    promise.reject(BreakingBadNetworkError.initialPageLoadError)
+    private func getInitialPage() -> Promise<[CharacterElement]> {
+        return Promise<[CharacterElement]> { promise in
+            sessionManager.request(getUrl(service: .kInitialPage)).validate().responseDecodable(of: [CharacterElement].self) { response in
+                
+                guard let characters = response.value else {
                     return
                 }
-
-                promise.fulfill(initialDataResults)
+                promise.fulfill(characters)
             }
         }
     }
 
-    private func getCharacterDetail(fullURLString: String) -> Promise<BreakingBadDAO> {
-        return Promise<BreakingBadDAO> { promise in
+    private func getCharacterDetail(fullURLString: String) -> Promise<[CharacterElement]> {
+        return Promise<[CharacterElement]> { promise in
             sessionManager.request(fullURLString).responseJSON { response in
-                guard let detailPageData = try? response.result.get() as? [String: Any] else {
+                guard let detailPageData = try? response.result.get() as? [Any] else {
                     promise.reject(BreakingBadNetworkError.detailPageLoadError)
                     return
-                }
-
-                if let breakingBadDAO = try? BreakingBadDAO(JSON: detailPageData) {
-                    promise.fulfill(breakingBadDAO)
-                } else {
-                    promise.reject(BreakingBadNetworkError.detailPageLoadError)
                 }
             }
         }
     }
 }
+
+

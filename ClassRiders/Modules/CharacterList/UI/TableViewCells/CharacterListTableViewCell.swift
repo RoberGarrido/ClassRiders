@@ -27,8 +27,8 @@ class CharacterListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setUpData(character: Character) {
-        if let url = URL(string: character.imgPortrait) {
+    func setUpData(character: CharacterElement) {
+        if let url = URL(string: character.img!) {
             characterThumb.sd_setImage(with: url, completed: nil)
         }
 

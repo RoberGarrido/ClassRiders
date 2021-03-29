@@ -15,17 +15,16 @@ class CharacterListPresenter: BasePresenter, CharacterListPresenterContract {
 
     weak var view: CharacterListViewContract!
     var interactor: CharacterListInteractorContract!
-    var entity: CharacterListEntityContract!
-    var wireframe: CharacterListWireframeContract!
+    var entity: CharacterListEntityContract?
+    var wireframe: CharacterListWireframeContract?
     
-    var charactersList: [Character] = []
+    var charactersList: [CharacterElement] = []
 
     func viewDidLoad() {
 
     }
 
     func viewWillAppear() {
-        // get initial data to populate the view
         firstly {
             interactor.getCharactersList()
         }.done { [weak self] charactersListData in

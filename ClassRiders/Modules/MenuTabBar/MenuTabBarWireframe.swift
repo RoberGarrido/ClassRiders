@@ -1,8 +1,8 @@
 //
-//  CharacterListWireframe.swift
+//  MenuTabBarWireframe.swift
 //  ClassRiders
 //
-//  Created by Rober Garrido on 24/3/21.
+//  Created by Rober Garrido on 29/3/21.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
@@ -10,11 +10,11 @@
 import Foundation
 import UIKit
 
-class CharacterListWireframe: BaseWireframe, CharacterListWireframeContract {
-    weak var output: CharacterListWireframeOutputContract?
-    weak var view: UIViewController?
+class MenuTabBarWireframe: BaseWireframe, MenuTabBarWireframeContract {
+    weak var output: MenuTabBarWireframeOutputContract!
+    weak var view: UIViewController!
 
-    weak var loadingDelegate: LoadingViewDelegate?
+    weak var loadingDelegate: LoadingViewDelegate!
     
 
     /// Show basic loading
@@ -35,12 +35,6 @@ class CharacterListWireframe: BaseWireframe, CharacterListWireframeContract {
         self.loadingDelegate?.dismiss {
             completion()
         }
-    }
-    
-    func showDetailCharacterView(character: CharacterElement) {
-        let detailModule = CharacterDetailBuilder.build(character: character)
-        self.presentView(from: self.view, useCase: detailModule,
-                         withTransition: .modal, completion: nil)
     }
     
 }

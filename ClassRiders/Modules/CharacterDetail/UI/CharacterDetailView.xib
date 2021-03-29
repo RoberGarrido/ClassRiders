@@ -20,11 +20,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fap-Ds-BNJ">
-                    <rect key="frame" x="82" y="44" width="250" height="250"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvk-xm-Iyt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakingBadWP" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-fU-HMV">
+                            <rect key="frame" x="0.0" y="-7" width="414" height="301"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="fap-Ds-BNJ" secondAttribute="height" multiplier="1:1" id="CD5-61-WbY"/>
-                        <constraint firstAttribute="height" constant="250" id="hZM-ue-tSM"/>
+                        <constraint firstItem="Tja-fU-HMV" firstAttribute="top" secondItem="Bvk-xm-Iyt" secondAttribute="top" constant="-7" id="9Bw-EV-4Me"/>
+                        <constraint firstItem="Tja-fU-HMV" firstAttribute="centerY" secondItem="Bvk-xm-Iyt" secondAttribute="centerY" constant="-3.5" id="NqX-DO-Jdh"/>
+                        <constraint firstItem="Tja-fU-HMV" firstAttribute="centerX" secondItem="Bvk-xm-Iyt" secondAttribute="centerX" id="QiB-x8-yBb"/>
+                        <constraint firstItem="Tja-fU-HMV" firstAttribute="leading" secondItem="Bvk-xm-Iyt" secondAttribute="leading" id="btp-z4-Rbj"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fap-Ds-BNJ">
+                    <rect key="frame" x="127.5" y="63" width="159" height="204"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fap-Ds-BNJ" secondAttribute="height" multiplier="1:1" constant="-45" id="CD5-61-WbY"/>
+                        <constraint firstAttribute="height" constant="204" id="hZM-ue-tSM"/>
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aSI-BU-XhF">
@@ -33,19 +48,24 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="uGy-7n-QX9"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Bvk-xm-Iyt" firstAttribute="top" secondItem="uOA-gx-fqg" secondAttribute="top" id="1rv-q8-YqW"/>
                 <constraint firstItem="uGy-7n-QX9" firstAttribute="bottom" secondItem="aSI-BU-XhF" secondAttribute="bottom" id="6c3-MC-JuT"/>
                 <constraint firstItem="aSI-BU-XhF" firstAttribute="leading" secondItem="uGy-7n-QX9" secondAttribute="leading" id="BJR-fa-Eif"/>
+                <constraint firstItem="Bvk-xm-Iyt" firstAttribute="trailing" secondItem="aSI-BU-XhF" secondAttribute="trailing" id="CGG-Vc-t7R"/>
                 <constraint firstItem="fap-Ds-BNJ" firstAttribute="centerX" secondItem="uGy-7n-QX9" secondAttribute="centerX" id="HrV-6G-8b7"/>
+                <constraint firstItem="aSI-BU-XhF" firstAttribute="top" secondItem="Bvk-xm-Iyt" secondAttribute="bottom" id="frj-A2-fIc"/>
                 <constraint firstItem="uGy-7n-QX9" firstAttribute="trailing" secondItem="aSI-BU-XhF" secondAttribute="trailing" id="gqX-sY-zLJ"/>
-                <constraint firstItem="aSI-BU-XhF" firstAttribute="top" secondItem="fap-Ds-BNJ" secondAttribute="bottom" id="nhE-qT-App"/>
-                <constraint firstItem="fap-Ds-BNJ" firstAttribute="top" secondItem="uGy-7n-QX9" secondAttribute="top" id="s1T-Su-asc"/>
+                <constraint firstItem="aSI-BU-XhF" firstAttribute="top" secondItem="fap-Ds-BNJ" secondAttribute="bottom" constant="27" id="nhE-qT-App"/>
+                <constraint firstItem="fap-Ds-BNJ" firstAttribute="top" secondItem="uGy-7n-QX9" secondAttribute="top" constant="19" id="s1T-Su-asc"/>
+                <constraint firstItem="Bvk-xm-Iyt" firstAttribute="leading" secondItem="aSI-BU-XhF" secondAttribute="leading" id="y54-DI-6iT"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="104"/>
+            <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="breakingBadWP" width="760" height="475"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

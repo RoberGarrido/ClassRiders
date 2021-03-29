@@ -11,7 +11,7 @@ import UIKit
 
 class CharacterListView: BaseViewController, CharacterListViewContract {
 
-	var presenter: CharacterListPresenterContract!
+    var presenter: CharacterListPresenterContract!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +19,7 @@ class CharacterListView: BaseViewController, CharacterListViewContract {
     // swiftlint:disable:next weak_delegate
     var delegate: CharacterListDelegate!
 
-	// MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -32,7 +32,7 @@ class CharacterListView: BaseViewController, CharacterListViewContract {
     }
     
     // MARK: - Public methods
-    func updateCharacterData(characters: [Character]) {
+    func updateCharacterData(characters: [CharacterElement]) {
         datasource.characters = characters
 
         tableView.reloadData()
@@ -60,7 +60,7 @@ class CharacterListView: BaseViewController, CharacterListViewContract {
 }
 
 class CharacterListDataSource: NSObject, UITableViewDataSource {
-    var characters: [Character] = []
+    var characters: [CharacterElement] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count

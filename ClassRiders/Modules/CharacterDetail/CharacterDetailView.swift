@@ -11,7 +11,7 @@ import UIKit
 
 class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
 
-	var presenter: CharacterDetailPresenterContract!
+    var presenter: CharacterDetailPresenterContract!
     
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -21,7 +21,7 @@ class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
     // swiftlint:disable:next weak_delegate
     var delegate: CharacterDetailDelegate!
     
-	// MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -34,7 +34,7 @@ class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
     }
 
     private func setupView() {
-        headerImage.makeRounded()
+        //headerImage.makeRounded()
 
         // Setup tableview
         tableView.register(UINib(nibName: CharacterDetailTableViewCell.cellId, bundle: nil),
@@ -45,19 +45,21 @@ class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
         tableView.delegate = delegate
     }
     
-    func reloadViewWithData(character: Character) {
-        headerImage.sd_setImage(with: URL(string: character.imgPortrait)!, completed: nil)
+    func reloadViewWithData(character: CharacterElement) {
+        headerImage.sd_setImage(with: URL(string: character.img!)!, completed: nil)
 
         datasource.characterData = genericData(character: character)
         tableView.reloadData()
     }
     
-    private func genericData(character: Character) -> [String: String] {
+    private func genericData(character: CharacterElement) -> [String: String] {
         var characterData: [String: String] = [:]
 
         characterData["name"] = character.name
-        characterData["status"] = "\(character.status)"
-        characterData["nickname"] = "\(character.nickname)"
+        characterData["birthday"] = character.birthday.map { $0.rawValue }
+        characterData["status"] = character.status?.rawValue
+        characterData["nickname"] = character.nickname
+        characterData["portrayed"] = character.portrayed
 
         return characterData
     }

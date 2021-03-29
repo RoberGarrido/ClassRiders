@@ -11,22 +11,9 @@ import Alamofire
 // MARK: - Enums
 
 /// Available API endpoints
-enum APIEndpoint {
-    case signIn
-    case signOut
-    case signUp
-
-    /// Endpoint string
-    var endpointUrl: String {
-        switch self {
-        case .signIn:
-            return kAPIURL+"login"
-        case .signOut:
-            return kAPIURL+"logout"
-        case .signUp:
-            return kAPIURL+"register"
-        }
-    }
+enum APIEndpoint: String, CodingKey {
+    case charID = "char_id"
+    case name, birthday, img, status, nickname, appearance, portrayed
 }
 
 /// Network errors

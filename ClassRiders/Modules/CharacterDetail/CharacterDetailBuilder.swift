@@ -11,7 +11,7 @@ import UIKit
 
 class CharacterDetailBuilder {
 
-    static func build(character: Character) -> CharacterDetailView {
+    static func build(character: CharacterElement) -> CharacterDetailView {
         let view = CharacterDetailView.init(nibName: String(describing: CharacterDetailView.self), bundle: nil)
         let presenter = CharacterDetailPresenter()
         let entity = CharacterDetailEntity()
