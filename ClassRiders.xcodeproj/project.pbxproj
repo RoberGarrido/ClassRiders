@@ -59,6 +59,8 @@
 		1691EA112611EC8F00342E15 /* MenuTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1691EA092611EC8F00342E15 /* MenuTabBarView.xib */; };
 		1691EA122611EC8F00342E15 /* MenuTabBarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691EA0A2611EC8F00342E15 /* MenuTabBarEntity.swift */; };
 		1691EA132611EC8F00342E15 /* MenuTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691EA0B2611EC8F00342E15 /* MenuTabBarWireframe.swift */; };
+		1691EA172611F1C900342E15 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691EA162611F1C900342E15 /* UIColorExtension.swift */; };
+		1691EA1A2611F22700342E15 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691EA192611F22700342E15 /* ArrayExtension.swift */; };
 		16DADFE5260A85D100C075E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE4260A85D100C075E0 /* AppDelegate.swift */; };
 		16DADFE7260A85D100C075E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE6260A85D100C075E0 /* SceneDelegate.swift */; };
 		16DADFE9260A85D100C075E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DADFE8260A85D100C075E0 /* ViewController.swift */; };
@@ -121,6 +123,8 @@
 		1691EA092611EC8F00342E15 /* MenuTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTabBarView.xib; sourceTree = "<group>"; };
 		1691EA0A2611EC8F00342E15 /* MenuTabBarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarEntity.swift; sourceTree = "<group>"; };
 		1691EA0B2611EC8F00342E15 /* MenuTabBarWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarWireframe.swift; sourceTree = "<group>"; };
+		1691EA162611F1C900342E15 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1691EA192611F22700342E15 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		16DADFE1260A85D100C075E0 /* ClassRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DADFE4260A85D100C075E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16DADFE6260A85D100C075E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				162A1D2E260B551200D7E4D5 /* StringExtension.swift */,
 				162A1D3E260B565700D7E4D5 /* UIViewControllerExtension.swift */,
 				162A1E81260CA52900D7E4D5 /* UIImageViewExtension.swift */,
+				1691EA162611F1C900342E15 /* UIColorExtension.swift */,
+				1691EA192611F22700342E15 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,13 +349,13 @@
 		1691EA032611EC4600342E15 /* MenuTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				1691EA042611EC8F00342E15 /* MenuTabBarContract.swift */,
-				1691EA052611EC8F00342E15 /* MenuTabBarPresenter.swift */,
 				1691EA062611EC8F00342E15 /* MenuTabBarBuilder.swift */,
+				1691EA042611EC8F00342E15 /* MenuTabBarContract.swift */,
+				1691EA0A2611EC8F00342E15 /* MenuTabBarEntity.swift */,
 				1691EA072611EC8F00342E15 /* MenuTabBarInteractor.swift */,
+				1691EA052611EC8F00342E15 /* MenuTabBarPresenter.swift */,
 				1691EA082611EC8F00342E15 /* MenuTabBarView.swift */,
 				1691EA092611EC8F00342E15 /* MenuTabBarView.xib */,
-				1691EA0A2611EC8F00342E15 /* MenuTabBarEntity.swift */,
 				1691EA0B2611EC8F00342E15 /* MenuTabBarWireframe.swift */,
 			);
 			path = MenuTabBar;
@@ -549,6 +555,7 @@
 				1691EA0E2611EC8F00342E15 /* MenuTabBarBuilder.swift in Sources */,
 				162A1E10260BD73E00D7E4D5 /* CharacterListWireframe.swift in Sources */,
 				162A1E7A260C9D6700D7E4D5 /* CharacterDetailInteractor.swift in Sources */,
+				1691EA172611F1C900342E15 /* UIColorExtension.swift in Sources */,
 				162A1E7D260C9D6700D7E4D5 /* CharacterDetailEntity.swift in Sources */,
 				1691EA0C2611EC8F00342E15 /* MenuTabBarContract.swift in Sources */,
 				162A1DD8260BB9E500D7E4D5 /* NetworkConstants.swift in Sources */,
@@ -558,6 +565,7 @@
 				1691E9ED2611E8E800342E15 /* FormContract.swift in Sources */,
 				162A1D3F260B565700D7E4D5 /* UIViewControllerExtension.swift in Sources */,
 				162A1E7B260C9D6700D7E4D5 /* CharacterDetailView.swift in Sources */,
+				1691EA1A2611F22700342E15 /* ArrayExtension.swift in Sources */,
 				162A1E82260CA52900D7E4D5 /* UIImageViewExtension.swift in Sources */,
 				1691E9F42611E8E800342E15 /* FormWireframe.swift in Sources */,
 				1691E9F02611E8E800342E15 /* FormInteractor.swift in Sources */,

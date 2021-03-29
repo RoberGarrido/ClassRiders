@@ -9,23 +9,31 @@
 
 import UIKit
 
-class MenuTabBarView: BaseViewController, MenuTabBarViewContract {
+class MenuTabBarView: BaseTabBarController, MenuTabBarViewContract {
 
-	var presenter: MenuTabBarPresenterContract!
+    var presenter: MenuTabBarPresenterContract?
 
-	// MARK: - LifeCycle
+    // MARK: - LifeCycle
+    override func loadView() {
+        MenuTabBarBuilder.setupPresenter(view: self)
+        super.loadView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.presenter.viewDidLoad()
+        self.presenter?.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter.viewWillAppear()
+        self.presenter?.viewWillAppear()
     }
 
     private func setupView() {
+        let views = presenter?.getTabBarViewController()
 
+        self.viewControllers = views
+        self.selectedIndex = 0
     }
 }

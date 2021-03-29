@@ -13,6 +13,8 @@ class CharacterListBuilder {
 
     static func build() -> CharacterListView {
         let view = CharacterListView.init(nibName: String(describing: CharacterListView.self), bundle: nil)
+        view.tabBarItem = UITabBarItem(title: "Class Riders",
+                                       image: UIImage(systemName: "bolt"), tag: 0)
         let presenter = CharacterListPresenter()
         let entity = CharacterListEntity()
         let wireframe = CharacterListWireframe()

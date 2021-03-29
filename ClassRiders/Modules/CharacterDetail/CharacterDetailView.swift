@@ -60,6 +60,7 @@ class CharacterDetailView: BaseViewController, CharacterDetailViewContract {
         characterData["status"] = character.status?.rawValue
         characterData["nickname"] = character.nickname
         characterData["portrayed"] = character.portrayed
+        characterData["category"] = character.category.map { $0.rawValue }
 
         return characterData
     }

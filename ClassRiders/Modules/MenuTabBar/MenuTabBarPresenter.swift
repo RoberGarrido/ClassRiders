@@ -16,15 +16,23 @@ class MenuTabBarPresenter: BasePresenter, MenuTabBarPresenterContract {
     var entity: MenuTabBarEntityContract!
     var wireframe: MenuTabBarWireframeContract!
 
-    func viewDidLoad() {
-
-    }
-
     func viewWillAppear() {
 
     }
-}
+    
+    func viewDidLoad() {
+       
+    }
 
+    func getTabBarViewController() -> [BaseViewController] {
+        let characterList = CharacterListBuilder.build()
+        let formsView = FormBuilder.build()
+        
+        
+
+        return [characterList, formsView]
+    }
+}
 
 // MARK: - MenuTabBarInteractorOutputContract
 extension MenuTabBarPresenter: MenuTabBarInteractorOutputContract {

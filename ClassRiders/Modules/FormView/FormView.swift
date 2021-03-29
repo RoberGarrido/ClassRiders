@@ -13,6 +13,7 @@ class FormView: BaseViewController, FormViewContract {
 
     var presenter: FormPresenterContract!
 
+
     @IBOutlet weak var nametTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

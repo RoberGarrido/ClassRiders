@@ -9,14 +9,15 @@
 
 import Foundation
 import UIKit
+import CoreBluetooth
 import PromiseKit
 
 protocol MenuTabBarEntityContract: BaseEntity {
     
 }
 
-protocol MenuTabBarViewContract: BaseViewController {
-    var presenter: MenuTabBarPresenterContract! { get set }
+protocol MenuTabBarViewContract: BaseTabBarController {
+    var presenter: MenuTabBarPresenterContract? { get set }
     
 }
 
@@ -25,9 +26,11 @@ protocol MenuTabBarPresenterContract: BasePresenter {
     var interactor: MenuTabBarInteractorContract! { get set }
     var entity: MenuTabBarEntityContract! { get set }
     var wireframe: MenuTabBarWireframeContract! { get set }
-
-    func viewDidLoad()
+    
     func viewWillAppear()
+    func viewDidLoad()
+
+    func getTabBarViewController() -> [BaseViewController]
 }
 
 protocol MenuTabBarInteractorContract: BaseInteractor {

@@ -13,7 +13,7 @@ import Alamofire
 /// Available API endpoints
 enum APIEndpoint: String, CodingKey {
     case charID = "char_id"
-    case name, birthday, img, status, nickname, appearance, portrayed
+    case name, birthday, occupation, img, status, nickname, appearance, portrayed
 }
 
 /// Network errors

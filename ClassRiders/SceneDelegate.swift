@@ -15,13 +15,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        let splashView = CharacterListBuilder.build()
+        //let window = UIWindow(windowScene: windowScene)
+        //let splashView = CharacterListBuilder.build()
 
-        window.rootViewController = splashView
+        //window.rootViewController = splashView
 
-        self.window = window
-        window.makeKeyAndVisible()
+        //self.window = window
+        //window.makeKeyAndVisible()
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        let tabBar = MenuTabBarBuilder.build()
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
